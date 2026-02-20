@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expression Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 60px;
+            font-family: Arial;
+        }
+
+        input {
+            padding: 8px;
+            margin: 10px;
+            width: 300px;
+        }
+
+        button {
+            background: linear-gradient(red, blue);
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculator</h2>
+
+    <input type="text" id="expression" placeholder="Enter expression like 1*2/395-5459">
+
+    <br>
+
+    <button onclick="clickbtn(1)">Calculate</button>
+    <button onclick="clickbtn(2)">Clear</button>
+
+    <p id="result"></p>
+
+    <script>
+        function clickbtn(x) {
+
+            var exp = document.getElementById("expression").value;
+            var c;
+
+            switch (x) {
+
+                case 1:
+                    c = eval(exp);
+                    document.getElementById("result").innerHTML = "Result: " + c;
+                    break;
+
+                case 2:
+                    document.getElementById("expression").value = "";
+                    document.getElementById("result").innerHTML = "";
+                    break;
+
+                default:
+                    document.getElementById("result").innerHTML = "Invalid";
+            }
+        }
+    </script>
+
+</body>
+</html>
